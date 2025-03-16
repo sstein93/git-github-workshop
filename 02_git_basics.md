@@ -143,7 +143,7 @@ Dracula starts a new project, `moons`, related to his `planets` project. Despite
  Why is it a bad idea to do this?
  How can Dracula "undo" his last `git init`?
 
-Note: there is an option to use (Git submodules)[https://git-scm.com/book/en/v2/Git-Tools-Submodules] to access a project within a project, however this can become complicated and is often not recommended.
+*Note: there is an option to use (Git submodules)[https://git-scm.com/book/en/v2/Git-Tools-Submodules] to access a project within a project, however this can become complicated and is often not recommended.*
  
 ***
 
