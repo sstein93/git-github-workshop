@@ -4,9 +4,9 @@
 In this lesson you will:
 
 * Define what a branch is and what they are useful for
-* Create a branch and switch between branches in GitHub Desktop
-* Make changes to branches in GitHub Desktop
-* Merge branches in GitHub Desktop
+* Create a branch and switch between branches
+* Make changes to branches 
+* Merge branches 
 * Explore branch management on GitHub
 
 ## What is a branch?
@@ -16,7 +16,7 @@ So far we've demonstrated how Git captures a history of your repository in a ser
 The illustration below shows a repository where each commit is represented by a circle and the edges show their linear relationship. Someone has made a new branch, `Some Feature`, independent from `main`. `Some Feature` has some of its own commits, but that history of commits is separate from `main`:
 
 <p align="center">
-  <img src="../img/9.GHD_new_branch.png" width="800">
+  <img src="img/9.GHD_new_branch.png" width="800">
 </p>
 
 Image source: https://www.atlassian.com/git/tutorials/using-branches/git-merge
@@ -31,15 +31,19 @@ Image source: https://www.atlassian.com/git/tutorials/using-branches/git-merge
 
 Or, if you only want to incorporate some of the changes, you can **cherry-pick** those commits to `main`. Or, if your experimenting didn't work, you can keep the whole branch separate and continue working on it or ignore it altogether, without jeopardizing `main`.
 
-## How to create a branch in GitHub Desktop
+## How to create a branch 
 
-To create a new branch in GitHub Desktop, click the arrow next to `Current Branch` in the middle tab of your repository bar. From the dropdown menu's `Branches` tab, you'll see a button that says `New Branch`:
+To create a new branch locally in git, type:
 
-<p align="center">
-  <img src="img/9.GHD_make_branch_1.png" width="800">
-</p>
+```{.bash}
+$ git checkout -b test_branch
+```
 
-Click `New Branch`, and you'll get a popup asking you to name the branch. There is also a reminder that your new branch will be based off of `main`, meaning that it will contain the same history of commits as `main` up until the point that the two branches diverged. If you had multiple branches, GitHub Desktop would let you choose which branch you would like to base the new branch from. Give your new branch an appropriate name (we chose `test_branch`), then click `Create Branch`:
+~~{.output}
+Switched to a new branch 'test_branch'
+~~~
+
+You can name your branch anything, by replacing `test_branch` with your name of choice.
 
 <p align="center">
   <img src="img/9.GHD_make_branch_2.png" width="800">
