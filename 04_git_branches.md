@@ -45,24 +45,63 @@ Switched to a new branch 'test_branch'
 
 You can name your branch anything, by replacing `test_branch` with your name of choice.
 
-<p align="center">
-  <img src="img/9.GHD_make_branch_2.png" width="800">
-</p>
+You can check which branch you are in by running `git status`:
 
-You'll notice that the middle tab of your repository bar now indicates that your Current Branch is now `test_branch`.
+```{.bash}
+$ git status
+```
+
+~~~ {.output}
+On branch test_branch
+nothing to commit, working tree clean
+~~~
+
 
 ## Switching between branches
 
-Earlier, we mentioned that branch histories are independent. That means that you can continue making changes to `main` even though you are working in a new branch. You can switch back and forth between branches easily. Simply click the arrow next to `Current Branch` in the middle tab of your repository bar. Now your drop down menu will display all available branches for your current repository in the `Branches` tab. The branch you're currently in will have a check mark next to the name. Simply select whichever branch you would like to navigate to:
+Earlier, we mentioned that branch histories are independent. That means that you can continue making changes to `main` even though you are working in a new branch. You can switch back and forth between branches easily using `git checkout`.
 
-<p align="center">
-  <img src="img/9.GHD_switch_branch.png" width="800">
-</p>
+```{.bash}
+$ git checkout main
+```
+
+~~~ {.output}
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+~~~
+
 
 For now though, let's stay in `test_branch`
 
-> **What if I decide I want to delete a branch?**
-> Maybe you have abandoned your experimental code and want to clean up the clutter. To delete a branch, make sure your `Current Branch` is set to the branch you would like to delete. Then, select `Branch` from the menu bar, and select `Delete Branch` from the drop down menu. GitHub Desktop will produce a pop up to confirm before you delete your branch, but be careful: Deleting a branch is permanent!
+```{.bash}
+$ git checkout test_branch
+```
+
+
+**What if I decide I want to delete a branch?**
+
+Maybe you have abandoned your experimental code and want to clean up the clutter. To delete a branch, use `git branch -d <branch_name>`:
+
+```{.bash}
+$ git branch -d test_branch
+```
+
+~~~ {.output}
+error: cannot delete branch 'test_branch' used by worktree at '/Users/shaynastein/Documents/gitrepos/planets
+~~~
+
+You can't delete a branch while you are in that branch!.
+
+```{.bash}
+$ git checkout main
+$ git branch -d test_branch
+```
+
+~~~ {.output}
+Deleted branch test_branch (was 9c3c3cd).
+~~~
+
+Now we have deleted `test_branch`
 
 ## Making changes (commits) to your new branch
 
