@@ -1,8 +1,4 @@
----
-title: Version Control with Git
-subtitle: Collaborations in GitHub
-duration: 30
----
+# Collaborations in Github
 
 ## Learning Objectives
 * Collaborate pushing to a common repository

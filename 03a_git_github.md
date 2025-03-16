@@ -60,14 +60,12 @@ Click on the 'SSH' link to change the protocol from HTTPS to SSH.
 
 > ### HTTPS vs. SSH
 >
-> We use SSH here because, while it requires some additional configuration, it is a security protocol widely used by many applications. The steps below describe SSH at a minimum level for GitHub. 
-
-![Changing the Repository URL on GitHub](img/github-change-repo-string.png)
+> If you are working on an SSH server then follow the instructions in Step 4 for setting up SSH keys. Otherwise follow the HTTPS instructions on github
 
 Copy that URL from the browser, go into the local `planets` repository, and run this command:
 
 ~~~ {.bash}
-$ git remote add origin git@github.com:vlad/planets.git
+$ git remote add origin https://github.com/vlad/planets.git
 ~~~
 
 Make sure to use the URL for your repository rather than Vlad's: the only difference should be your username instead of `vlad`.
@@ -81,13 +79,85 @@ $ git remote -v
 ~~~
 
 ~~~ {.output}
-origin   git@github.com:vlad/planets.git (fetch)
-origin   git@github.com:vlad/planets.git (push)
+origin   https://github.com/vlad/planets.git (fetch)
+origin   https://github.com/vlad/planets.git (push)
 ~~~
 
 We'll discuss remotes in more detail later in this session, while talking about how they might be used for collaboration.
 
-## 3. SSH Background and Setup
+## 3. Push local changes to a remote
+
+Now that authentication is setup, we can return to the remote.  This command will push the changes from
+our local repository to the repository on GitHub:
+
+1. Copy the HTTPS URL from the planets repository online
+2. `cd` into the local `planets` repository via your Terminal
+3. Run the following command making sure to use the URL for your repository rather than Vlad's.
+
+~~~ {.bash}
+$ git remote add origin <HTTPS-URL-from-github>
+~~~
+
+We can check that the command has worked by running `git remote -v`:
+
+~~~ {.bash}
+$ git remote -v
+~~~
+
+~~~ {.output}
+origin   https://github.com/vlad/planets.git (push)
+origin   https://github.com/vlad/planets.git (fetch)
+~~~
+
+The name `origin` is a local nickname for your remote repository, we could use something else if we wanted to, but `origin` is by far the most common choice.
+
+Once the nickname `origin` is set up, this command will push the changes from our local repository to the repository on GitHub:
+
+~~~ {.bash}
+$ git branch -M main
+$ git push -u origin main
+~~~
+~~~ {.output}
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 821 bytes, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To https://github.com/vlad/planets
+ * [new branch]      main -> main
+Branch main set up to track remote branch main from origin.
+~~~
+
+This is what we have done so far to make sure that out local and remote repositories are in sync:
+
+![GitHub Repository After First Push](https://cdn.rawgit.com/hbc/NGS_Data_Analysis_Course/master/sessionVI/img/github-repo-after-first-push.svg)
+
+We can pull changes from the remote repository to the local one as well:
+
+~~~ {.bash}
+$ git pull origin main
+~~~
+~~~ {.output}
+From https://github.com/vlad/planets
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+~~~
+
+Pulling has no effect in this case
+because the two repositories are already synchronized.
+If someone else had pushed some changes to the repository on GitHub,
+though,
+this command would download them to our local repository.
+
+***
+**Exercises**
+
+1. Browse to your `planets` repository on GitHub. Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number). Hover over and/or click on the three buttons to the right of each commit to explore what they point to; what information can you gather from these buttons?
+
+2. In this lesson, we introduced the "git push" command. How is "git push" different from "git commit"?
+
+
+## 4. SSH Background and Setup
 
 Before we can connect to a remote repository, we need to set up a way for our computer to **authenticate with GitHub** so it knows that it is really us trying to connect (for security purposes).
 
@@ -121,7 +191,7 @@ ls: cannot access '/c/Users/Vlad Dracula/.ssh': No such file or directory
 If SSH has been set up on the computer you're using, the public and private key pairs will be listed. The file names are either `id_ed25519`/`id_ed25519.pub` or `id_rsa`/`id_rsa.pub` depending on how the key pairs were set up.  
 Since they don’t exist on Dracula’s computer, he uses this command to create them. 
 
-### 3.1 Create an SSH key pair
+### 4.1 Create an SSH key pair
 To create an SSH key pair Vlad uses this command, where the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key (here, Vlad's email):  
 
 ~~~ {.bash}
@@ -186,7 +256,7 @@ drwxr-xr-x 1 Vlad Dracula 197121   0 Jul 16 14:48 ../
 -rw-r--r-- 1 Vlad Dracula 197121 106 Jul 16 14:48 id_ed25519.pub
 ~~~
 
-### 3.2 Copy the public key to GitHub
+### 4.2 Copy the public key to GitHub
 
 Now we have a SSH key pair and we can run this command to check if GitHub can read our authentication.  
 
@@ -238,76 +308,6 @@ Hi Vlad! You've successfully authenticated, but GitHub does not provide shell ac
 ~~~
 
 Good! This output confirms that the SSH key works as intended. We are now ready to push our work to the remote repository.
-
-## 4. Push local changes to a remote
-
-Now that authentication is setup, we can return to the remote.  This command will push the changes from
-our local repository to the repository on GitHub:
-
-1. Copy the SSH URL from the planets repository online
-2. `cd` into the local `planets` repository via your Terminal
-3. Run the following command making sure to use the URL for your repository rather than Vlad's.
-
-~~~ {.bash}
-$ git remote add origin <SSH-URL-from-github>
-~~~
-
-We can check that the command has worked by running `git remote -v`:
-
-~~~ {.bash}
-$ git remote -v
-~~~
-
-~~~ {.output}
-origin   https://github.com/vlad/planets.git (push)
-origin   https://github.com/vlad/planets.git (fetch)
-~~~
-
-The name `origin` is a local nickname for your remote repository, we could use something else if we wanted to, but `origin` is by far the most common choice.
-
-Once the nickname `origin` is set up, this command will push the changes from our local repository to the repository on GitHub:
-
-~~~ {.bash}
-$ git push origin master
-~~~
-~~~ {.output}
-Counting objects: 9, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (9/9), 821 bytes, done.
-Total 9 (delta 2), reused 0 (delta 0)
-To https://github.com/vlad/planets
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
-~~~
-
-This is what we have done so far to make sure that out local and remote repositories are in sync:
-
-![GitHub Repository After First Push](https://cdn.rawgit.com/hbc/NGS_Data_Analysis_Course/master/sessionVI/img/github-repo-after-first-push.svg)
-
-We can pull changes from the remote repository to the local one as well:
-
-~~~ {.bash}
-$ git pull origin master
-~~~
-~~~ {.output}
-From https://github.com/vlad/planets
- * branch            master     -> FETCH_HEAD
-Already up-to-date.
-~~~
-
-Pulling has no effect in this case
-because the two repositories are already synchronized.
-If someone else had pushed some changes to the repository on GitHub,
-though,
-this command would download them to our local repository.
-
-***
-**Exercises**
-
-1. Browse to your `planets` repository on GitHub. Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number). Hover over and/or click on the three buttons to the right of each commit to explore what they point to; what information can you gather from these buttons?
-
-2. In this lesson, we introduced the "git push" command. How is "git push" different from "git commit"?
 
 ***
 * These materials are from the Harvard Chan Bioinformatics Core
