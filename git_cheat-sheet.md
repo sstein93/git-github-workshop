@@ -145,3 +145,5 @@ version control
     Each set of changes creates a new [commit](#commit) of the files;
     the version control system allows users to recover old commits reliably,
     and helps manage conflicting changes made by different users.
+
+This document is from the Harvard Chan Bioinformatics Core: https://github.com/hbctraining/Training-modules/blob/d2743bf9f463fa15f04438868ae9a24282de286c/Git-Github/lessons/git_cheat-sheet.md
