@@ -42,6 +42,8 @@ $ git config --global color.ui "auto"
 
 (Please use your own name and email address instead of Dracula's.)
 
+You can use the Git Credential Manager to set up push permissions for private repos in your github account. [Here](https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md) are installation instructions.
+
 He also has to set his favorite text editor, following this table:
 
 | Editor             | Configuration command                            |
