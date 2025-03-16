@@ -1,10 +1,5 @@
----
-layout: page
-title: Version Control with Git
-subtitle: Reference
----
 ## Git Cheatsheets for Quick Reference 
-* A great [printable git cheatsheet](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf) is available in PDF from the GitHub training website.
+* A great [printable git cheatsheet]([https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf](https://education.github.com/git-cheat-sheet-education.pdf)) is available in PDF from the GitHub training website.
 * An [interactive one-page visualisation](http://ndpsoftware.com/git-cheatsheet.html) about the relationships between workspace, staging area, local repository, upstream repository, and the commands associated with each (with explanations).
 * Both resources are also available in other languages e.g. Spanish, French, and more
 
@@ -150,3 +145,5 @@ version control
     Each set of changes creates a new [commit](#commit) of the files;
     the version control system allows users to recover old commits reliably,
     and helps manage conflicting changes made by different users.
+
+This document is from the Harvard Chan Bioinformatics Core: https://github.com/hbctraining/Training-modules/blob/d2743bf9f463fa15f04438868ae9a24282de286c/Git-Github/lessons/git_cheat-sheet.md

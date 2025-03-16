@@ -1,8 +1,4 @@
----
-title: Version Control with Git
-subtitle: Remotes in GitHub
-duration: 45
----
+# Remotes in Github
 
 ## Learning Objectives
 *  Explain what remote repositories are and why they are useful.
@@ -314,6 +310,7 @@ this command would download them to our local repository.
 2. In this lesson, we introduced the "git push" command. How is "git push" different from "git commit"?
 
 ***
+* These materials are from the Harvard Chan Bioinformatics Core
 
 *These materials were adapted from [Software Carpentry](https://swcarpentry.github.io/git-novice/), the Licensing information can be [found here](LICENSE_SWC_git_materials.md).*
 
