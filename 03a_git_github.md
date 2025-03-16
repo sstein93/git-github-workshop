@@ -75,7 +75,7 @@ Make sure to use the URL for your repository rather than Vlad's: the only differ
 We can check that the command has worked by running `git remote -v`:
 
 ~~~ {.bash}
-$ [git remote -v](https://github.com/)
+$ git remote -v
 ~~~
 
 ~~~ {.output}
