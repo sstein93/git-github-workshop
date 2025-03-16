@@ -90,12 +90,12 @@ We'll discuss remotes in more detail later in this session, while talking about 
 Now that authentication is setup, we can return to the remote.  This command will push the changes from
 our local repository to the repository on GitHub:
 
-1. Copy the SSH URL from the planets repository online
+1. Copy the HTTPS URL from the planets repository online
 2. `cd` into the local `planets` repository via your Terminal
 3. Run the following command making sure to use the URL for your repository rather than Vlad's.
 
 ~~~ {.bash}
-$ git remote add origin <SSH-URL-from-github>
+$ git remote add origin <HTTPS-URL-from-github>
 ~~~
 
 We can check that the command has worked by running `git remote -v`:
@@ -114,7 +114,8 @@ The name `origin` is a local nickname for your remote repository, we could use s
 Once the nickname `origin` is set up, this command will push the changes from our local repository to the repository on GitHub:
 
 ~~~ {.bash}
-$ git push origin master
+$ git branch -M main
+$ git push -u origin main
 ~~~
 ~~~ {.output}
 Counting objects: 9, done.
@@ -123,8 +124,8 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (9/9), 821 bytes, done.
 Total 9 (delta 2), reused 0 (delta 0)
 To https://github.com/vlad/planets
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
+ * [new branch]      main -> main
+Branch main set up to track remote branch main from origin.
 ~~~
 
 This is what we have done so far to make sure that out local and remote repositories are in sync:
@@ -134,7 +135,7 @@ This is what we have done so far to make sure that out local and remote reposito
 We can pull changes from the remote repository to the local one as well:
 
 ~~~ {.bash}
-$ git pull origin master
+$ git pull origin main
 ~~~
 ~~~ {.output}
 From https://github.com/vlad/planets
