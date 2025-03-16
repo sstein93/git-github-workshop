@@ -62,8 +62,6 @@ Click on the 'SSH' link to change the protocol from HTTPS to SSH.
 >
 > If you are working on an SSH server then follow the instructions in Step 4 for setting up SSH keys. Otherwise follow the HTTPS instructions on github
 
-![Changing the Repository URL on GitHub](img/github-change-repo-string.png)
-
 Copy that URL from the browser, go into the local `planets` repository, and run this command:
 
 ~~~ {.bash}
@@ -77,12 +75,12 @@ Make sure to use the URL for your repository rather than Vlad's: the only differ
 We can check that the command has worked by running `git remote -v`:
 
 ~~~ {.bash}
-$ git remote -v
+$ [git remote -v](https://github.com/)
 ~~~
 
 ~~~ {.output}
-origin   git@github.com:vlad/planets.git (fetch)
-origin   git@github.com:vlad/planets.git (push)
+origin   https://github.com/vlad/planets.git (fetch)
+origin   https://github.com/vlad/planets.git (push)
 ~~~
 
 We'll discuss remotes in more detail later in this session, while talking about how they might be used for collaboration.
