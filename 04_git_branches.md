@@ -39,7 +39,7 @@ To create a new branch locally in git, type:
 $ git checkout -b test_branch
 ```
 
-~~{.output}
+~~ {.output}
 Switched to a new branch 'test_branch'
 ~~~
 
