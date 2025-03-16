@@ -9,11 +9,11 @@ For this next step, let's get into pairs, and give each other access to our `pla
 
 The Owner needs to give the Collaborator access. On GitHub, click the settings button on the right, then select Collaborators, and enter your partner's Github username.
 
-![Adding collaborators on GitHub](../img/github-add-collaborators.png)
+![Adding collaborators on GitHub](img/github-add-collaborators.png)
 
 Once the Collaborator has been added, he/she will get an email with the invitation. Go to the link in the invitation email and you should be able to see the Owner's repo on Github. 
 
-The Collaborator can work on this project online or locally. To work on it locally, click on the green "Clone or download" button and copy the `SSH` address. Now on your computer (in Terminal), `cd` to another directory since you cannot have 2 folders called `planets` in the same folder. Next, make a copy of the Owner's repository locally using `git clone`:
+The Collaborator can work on this project online or locally. To work on it locally, click on the green "Clone or download" button and copy the `SSH` or `HTTPS` address. Now on your computer (in Terminal), `cd` to another directory since you cannot have 2 folders called `planets` in the same folder. Next, make a copy of the Owner's repository locally using `git clone`:
 
 ~~~ {.bash}
 $ git clone <paste copied URL>
