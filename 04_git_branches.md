@@ -277,43 +277,39 @@ Fast-forward
 
 We've already been through how to create a pull request and merge branches on GitHub because making a pull request on GitHub Desktop requires GitHub, but it may be useful for you to know how to create a branch on GitHub as well.
 
-From your repository on GitHub, click on the `main` button in the upper left and you'll see an text box with the prompt to "Find or create a branch." Give your branch an appropriate name (we chose `remote_test_branch`), then click **`Create`** directly below:
+From your repository on GitHub, click on the button that says `XX Branches` where XX is the number of branches
 
 <p align="center">
-  <img src="img/9.GHD_create_branch_github_2.png" width="400">
+  <img src="img/new_create_branch_github_1.png" width="800">
 </p>
 
-Once you've created your branch, you can even see the new branch on GitHub Desktop (you may need to `Fetch origin` in order to be able to see it):
+This will take you to an overview page of all the branches.  
 
 <p align="center">
-  <img src="img/9.GHD_create_branch_github_3.png" width="800">
+  <img src="img/new_create_branch_github_2.png" width="800">
 </p>
 
-Let's try making a change to this branch. Add the following line to your `README.md` file on GitHub, then observe any changes to your local repo in GitHub Desktop.
+Click the the green button that says "New branch" in the top right corner.
 
+<p align="center">
+  <img src="img/new_create_branch_github_3.png" width="800">
+</p>
+
+Type in the name of your new branch
+
+You can see this new remote branch locally, by running `git branch -r`
+
+```{.bash}
+git branch -r
 ```
- This line was introduced on my remote branch!
-```
 
-<p align="center">
-  <img src="img/9.GHD_create_branch_github_4.png" width="800">
-</p>
+~~~{.output}
+  origin/HEAD -> origin/main
+  origin/main
+  origin/remote_test_branch
+  origin/test_branch
+~~~
 
-You'll see these changes are automatically pushed to the your local `remote_test_branch` and are visble on GitHub.
-
-<p align="center">
-  <img src="img/9.GHD_create_branch_github_5.png" width="800">
-</p>
-
-## Merging directly from GitHub.com
-
-If you click on the **`Pull request`** button in the upper left, you'll be brought to a new screen and see an option to **`Compare & pull request`** changes that GitHub has noticed in your new test branch:
-
-<p align="center">
-  <img src="img/9.GHD_create_branch_github_pull.png" width="800">
-</p>
-
-Clicking this button will bring you to a similar screen we saw before when initiating a pull from GitHub Dekstop. Go ahead and create the pull request, then confirm the pull request, just as before. Once you have confirmation that it's been synced, you can `Pull origin` to see that GitHub Desktop will have the merge incorporated to `main`.
 
 ***
 
