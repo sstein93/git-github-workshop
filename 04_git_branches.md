@@ -270,7 +270,7 @@ Fast-forward
  README.md | 1 +
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
-```
+~~~
 
 
 ## How to create a branch on GitHub
