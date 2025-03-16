@@ -1,8 +1,4 @@
----
-layout: default
-title: "Working with branches"
-author: "Heather Wick"
----
+# Git: Working with Branches
 
 ## Learning objectives
 In this lesson you will:
@@ -28,7 +24,7 @@ Image source: https://www.atlassian.com/git/tutorials/using-branches/git-merge
 Once you are done perfecting the changes made to the new branch, if you decide you want to keep and incorporate your changes into your `main` repository, you can **merge** the new branch back into `main`. This creates a single, unified repository again:
 
 <p align="center">
-  <img src="../img/9.GHD_merge_branch.png" width="800">
+  <img src="img/9.GHD_merge_branch.png" width="800">
 </p>
 
 Image source: https://www.atlassian.com/git/tutorials/using-branches/git-merge
@@ -40,13 +36,13 @@ Or, if you only want to incorporate some of the changes, you can **cherry-pick**
 To create a new branch in GitHub Desktop, click the arrow next to `Current Branch` in the middle tab of your repository bar. From the dropdown menu's `Branches` tab, you'll see a button that says `New Branch`:
 
 <p align="center">
-  <img src="../img/9.GHD_make_branch_1.png" width="800">
+  <img src="img/9.GHD_make_branch_1.png" width="800">
 </p>
 
 Click `New Branch`, and you'll get a popup asking you to name the branch. There is also a reminder that your new branch will be based off of `main`, meaning that it will contain the same history of commits as `main` up until the point that the two branches diverged. If you had multiple branches, GitHub Desktop would let you choose which branch you would like to base the new branch from. Give your new branch an appropriate name (we chose `test_branch`), then click `Create Branch`:
 
 <p align="center">
-  <img src="../img/9.GHD_make_branch_2.png" width="800">
+  <img src="img/9.GHD_make_branch_2.png" width="800">
 </p>
 
 You'll notice that the middle tab of your repository bar now indicates that your Current Branch is now `test_branch`.
@@ -56,7 +52,7 @@ You'll notice that the middle tab of your repository bar now indicates that your
 Earlier, we mentioned that branch histories are independent. That means that you can continue making changes to `main` even though you are working in a new branch. You can switch back and forth between branches easily. Simply click the arrow next to `Current Branch` in the middle tab of your repository bar. Now your drop down menu will display all available branches for your current repository in the `Branches` tab. The branch you're currently in will have a check mark next to the name. Simply select whichever branch you would like to navigate to:
 
 <p align="center">
-  <img src="../img/9.GHD_switch_branch.png" width="800">
+  <img src="img/9.GHD_switch_branch.png" width="800">
 </p>
 
 For now though, let's stay in `test_branch`
@@ -73,7 +69,7 @@ This line of code was introduced in the lesson on branches!
 ```
 
 <p align="center">
-  <img src="../img/9.GHD_change_readme.png" width="800">
+  <img src="img/9.GHD_change_readme.png" width="800">
 </p>
 
 Just as before, you'll immediately see the change in the `Changes` tab. Go ahead and commit this change by clicking `Commit to test_branch`:
@@ -95,7 +91,7 @@ One last step: let's publish our new branch to GitHub. From the main `Changes` t
 If you go to your repo on GitHub, you'll see that the branch has been published:
 
 <p align="center">
-  <img src="../img/9.GHD_branch_on_GitHub.png" width="800">
+  <img src="img/9.GHD_branch_on_GitHub.png" width="800">
 </p>
 
 **Note: If you already published your branch to GitHub and then make additional changes, you'll still have to Push your new changes to GitHub to sync your remote repository and create a pull request**
@@ -111,13 +107,13 @@ Once you're done making changes to your new branch, and you've decided you want 
 >While still in `test_branch`, if you go to your `History` tab and right-click the most recent commit we made, you'll see **`Cherry-pick Commit...`** in the dropdown menu:
 >
 ><p align="center">
->  <img src="../img/9.GHD_cherry_pick_1.png" width="800">
+>  <img src="img/9.GHD_cherry_pick_1.png" width="800">
 ></p>
 >
 >If you select this, it will give you the option to select a branch and then **cherry-pick** the commit to that branch:
 >
 ><p align="center">
->  <img src="../img/9.GHD_cherry_pick_2.png" width="800">
+>  <img src="img/9.GHD_cherry_pick_2.png" width="800">
 ></p>
 >
 > **For now though, we're going to skip this -- just close the pop-up without cherry-picking.**
@@ -127,19 +123,19 @@ Once you're done making changes to your new branch, and you've decided you want 
 Instead, we're going to keep all of our changes and merge `test_branch` with `main` via a **pull request**. You'll notice a new highlighted box with a blue button that gives the option to **`Preview Pull Request`** (you may notice that this button has a drop down menu to skip straight to `Create Pull Request`, but we recommend reviewing your pull request first):
 
 <p align="center">
-  <img src="../img/9.GHD_pull_request_1.png" width="800">
+  <img src="img/9.GHD_pull_request_1.png" width="800">
 </p>
 
 If you click this button, it will pull up a summary of changes, with the option to **`Create Pull Request`**:
 
 <p align="center">
-  <img src="../img/9.GHD_preview_pull_request.png" width="800">
+  <img src="img/9.GHD_preview_pull_request.png" width="800">
 </p>
 
 Clicking this will immediately open your repo on GitHub. Similar to when making a commit, you'll be prompted for a title and a description for your pull request. Go ahead and add a brief description and click the green **`Create pull request`** button
 
 <p align="center">
-  <img src="../img/9.GHD_create_pull_request_github.png" width="800">
+  <img src="img/9.GHD_create_pull_request_github.png" width="800">
 </p>
 
 > Note: you'll see a message up top here that says "Able to merge. These branches can be automatically merged." There may be cases where your branches conflict, just as commits can conflict, and they'll need to be manually reviewed.
@@ -147,7 +143,7 @@ Clicking this will immediately open your repo on GitHub. Similar to when making 
 After a moment of processing, the page will show you a number of useful options, including the ability to **require review from specific users** (useful if you have multiple people working on a project that belongs primarily to one person who is the main editor) or to turn on debugging options through **continuous integration**. Notice we have a nice green checkmark indicating that **This branch has no conflicts with the base branch** meaning we can merge these branches automatically without having to review any conflicting changes between `main` and `test_branch` manually.
 
 <p align="center">
-  <img src="../img/9.GHD_merge_pull_request_github.png" width="800">
+  <img src="img/9.GHD_merge_pull_request_github.png" width="800">
 </p>
 
 Under that is a big green button that says **`Merge pull request`**.
@@ -164,26 +160,26 @@ Go ahead and merge your branches using the default setting, clicking the green `
 Then, you'll be prompted to **`Confirm merge`**:
 
 <p align="center">
-  <img src="../img/9.GHD_merge_pull_request_github_confirm.png" width="800">
+  <img src="img/9.GHD_merge_pull_request_github_confirm.png" width="800">
 </p>
 
 You'll now see that the pull request has been completed on GitHub.
 
 <p align="center">
-  <img src="../img/9.GHD_merge_pull_request_github_done.png" width="800">
+  <img src="img/9.GHD_merge_pull_request_github_done.png" width="800">
 </p>
 
 Now we still have to sync our remote origin with our local repo. You'll see you now have a pull request:
 
 
 <p align="center">
-  <img src="../img/9.GHD_pull_origin_merge.png" width="800">
+  <img src="img/9.GHD_pull_origin_merge.png" width="800">
 </p>
 
 Go ahead and click `Pull origin` and then navigate to your `History` tab, and you'll see the commit from `test_branch` which updated the `README.md` file as well as the commit which merged the two branches:
 
 <p align="center">
-  <img src="../img/9.GHD_pull_origin_merge_history.png" width="800">
+  <img src="img/9.GHD_pull_origin_merge_history.png" width="800">
 </p>
 
 ## How to create a branch on GitHub
@@ -193,13 +189,13 @@ We've already been through how to create a pull request and merge branches on Gi
 From your repository on GitHub, click on the `main` button in the upper left and you'll see an text box with the prompt to "Find or create a branch." Give your branch an appropriate name (we chose `remote_test_branch`), then click **`Create`** directly below:
 
 <p align="center">
-  <img src="../img/9.GHD_create_branch_github_2.png" width="400">
+  <img src="img/9.GHD_create_branch_github_2.png" width="400">
 </p>
 
 Once you've created your branch, you can even see the new branch on GitHub Desktop (you may need to `Fetch origin` in order to be able to see it):
 
 <p align="center">
-  <img src="../img/9.GHD_create_branch_github_3.png" width="800">
+  <img src="img/9.GHD_create_branch_github_3.png" width="800">
 </p>
 
 Let's try making a change to this branch. Add the following line to your `README.md` file on GitHub, then observe any changes to your local repo in GitHub Desktop.
@@ -209,13 +205,13 @@ Let's try making a change to this branch. Add the following line to your `README
 ```
 
 <p align="center">
-  <img src="../img/9.GHD_create_branch_github_4.png" width="800">
+  <img src="img/9.GHD_create_branch_github_4.png" width="800">
 </p>
 
 You'll see these changes are automatically pushed to the your local `remote_test_branch` and are visble on GitHub.
 
 <p align="center">
-  <img src="../img/9.GHD_create_branch_github_5.png" width="800">
+  <img src="img/9.GHD_create_branch_github_5.png" width="800">
 </p>
 
 ## Merging directly from GitHub.com
@@ -223,13 +219,14 @@ You'll see these changes are automatically pushed to the your local `remote_test
 If you click on the **`Pull request`** button in the upper left, you'll be brought to a new screen and see an option to **`Compare & pull request`** changes that GitHub has noticed in your new test branch:
 
 <p align="center">
-  <img src="../img/9.GHD_create_branch_github_pull.png" width="800">
+  <img src="img/9.GHD_create_branch_github_pull.png" width="800">
 </p>
 
 Clicking this button will bring you to a similar screen we saw before when initiating a pull from GitHub Dekstop. Go ahead and create the pull request, then confirm the pull request, just as before. Once you have confirmation that it's been synced, you can `Pull origin` to see that GitHub Desktop will have the merge incorporated to `main`.
 
 ***
 
+* This document adapted is from: https://github.com/hbctraining/Tools-for-reproducible-research/blob/master/lessons/09_branches.md
 * Information in these materials derived from docs.github.com and https://www.atlassian.com/git/tutorials/using-branches
 
 
