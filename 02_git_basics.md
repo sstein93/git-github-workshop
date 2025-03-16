@@ -1,8 +1,4 @@
----
-title: Version Control with Git
-date: 2017-07-07
-duration: 90
----
+# Version Control with Git
 
 ## Learning objectives
 
