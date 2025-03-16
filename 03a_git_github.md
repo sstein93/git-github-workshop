@@ -25,15 +25,15 @@ to hold those master copies
 Let's start by sharing the changes we've made to our current project with the world.
 Go to [Github](http://github.com), and create an account if you don't have one or log in to GitHub. Once you have logged in with your (new) credentials, click on the icon in the top right corner to create a new repository called `planets`:
 
-![Creating a Repository on GitHub (Step 1)](../img/github-create-repo-01.png)
+![Creating a Repository on GitHub (Step 1)](img/github-create-repo-01.png)
 
 Name your repository "planets" and then click "Create Repository":
 
-![Creating a Repository on GitHub (Step 2)](../img/github-create-repo-02.png)
+![Creating a Repository on GitHub (Step 2)](img/github-create-repo-02.png)
 
 As soon as the repository is created, GitHub displays a page with a URL and some information on how to configure your local repository:
 
-![Creating a Repository on GitHub (Step 3)](../img/github-create-repo-03.png)
+![Creating a Repository on GitHub (Step 3)](img/github-create-repo-03.png)
 
 This effectively does the following on GitHub's servers:
 
@@ -46,7 +46,7 @@ $ git init
 
 Now that we have two repositories, we need a diagram like this:
 
-![Freshly-Made GitHub Repository](../img/git-freshly-made-github-repo.svg)
+![Freshly-Made GitHub Repository](img/git-freshly-made-github-repo.svg)
 
 Note that our local repository still contains our earlier work on `mars.txt`, but the remote repository on GitHub appears empty as it doesn't contain any files yet.
 
@@ -54,7 +54,7 @@ Note that our local repository still contains our earlier work on `mars.txt`, bu
 
 We need to connect the two repositories to **"sync"** them. We do this by making the GitHub repository a **"remote"** for the local repository. The home page of the repository on GitHub includes the URL string we need to identify it:
 
-![Where to Find Repository URL on GitHub](../img/github-find-repo-string.png)
+![Where to Find Repository URL on GitHub](img/github-find-repo-string.png)
 
 Click on the 'SSH' link to change the protocol from HTTPS to SSH.
 
@@ -62,7 +62,7 @@ Click on the 'SSH' link to change the protocol from HTTPS to SSH.
 >
 > We use SSH here because, while it requires some additional configuration, it is a security protocol widely used by many applications. The steps below describe SSH at a minimum level for GitHub. 
 
-![Changing the Repository URL on GitHub](../img/github-change-repo-string.png)
+![Changing the Repository URL on GitHub](img/github-change-repo-string.png)
 
 Copy that URL from the browser, go into the local `planets` repository, and run this command:
 
