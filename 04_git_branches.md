@@ -201,29 +201,11 @@ Now the remote is up-to-date with the local!
 
 ## Merging branches
 
-Once you're done making changes to your new branch, and you've decided you want to keep these changes and incorporate them into your `main` repo, you will want to **merge** branches back together. This will keep your repository organized so you don't end up with lots of different branches with lots of different versions. To do this, we'll be making a **pull** request from `main`. But before we do that, there's something important to consider:
-
->### What if I don't want to merge all the changes I made?
->
->Sometimes, you might find that there are some changes you want to incorporate from your new branch, but other changes you want to leave behind. This is called **Cherry-Picking**. When we were exploring options for commits in the previous lesson, this was one of the options we saw in the dropdown menu for commits in the `History` tab. **We're going to keep all of our changes, but for demonstration purposes let's show you how to cherry-pick in case you want to in the future:**
->
->While still in `test_branch`, if you go to your `History` tab and right-click the most recent commit we made, you'll see **`Cherry-pick Commit...`** in the dropdown menu:
->
-><p align="center">
->  <img src="img/9.GHD_cherry_pick_1.png" width="800">
-></p>
->
->If you select this, it will give you the option to select a branch and then **cherry-pick** the commit to that branch:
->
-><p align="center">
->  <img src="img/9.GHD_cherry_pick_2.png" width="800">
-></p>
->
-> **For now though, we're going to skip this -- just close the pop-up without cherry-picking.**
+Once you're done making changes to your new branch, and you've decided you want to keep these changes and incorporate them into your `main` repo, you will want to **merge** branches back together. This will keep your repository organized so you don't end up with lots of different branches with lots of different versions. To do this, we'll be making a **pull** request from `main`. 
 
 ### Making a pull request to merge branches
 
-Instead, we're going to keep all of our changes and merge `test_branch` with `main` via a **pull request**. You'll notice a new highlighted box with a blue button that gives the option to **`Preview Pull Request`** (you may notice that this button has a drop down menu to skip straight to `Create Pull Request`, but we recommend reviewing your pull request first):
+We're going to merge `test_branch` with `main` via a **pull request**. You'll notice a new highlighted box with a blue button that gives the option to **`Preview Pull Request`** (you may notice that this button has a drop down menu to skip straight to `Create Pull Request`, but we recommend reviewing your pull request first):
 
 <p align="center">
   <img src="img/9.GHD_pull_request_1.png" width="800">
