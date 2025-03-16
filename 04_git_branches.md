@@ -205,31 +205,29 @@ Once you're done making changes to your new branch, and you've decided you want 
 
 ### Making a pull request to merge branches
 
-We're going to merge `test_branch` with `main` via a **pull request**. You'll notice a new highlighted box with a blue button that gives the option to **`Preview Pull Request`** (you may notice that this button has a drop down menu to skip straight to `Create Pull Request`, but we recommend reviewing your pull request first):
+We're going to merge `test_branch` with `main` via a **pull request**. On Github, you'll notice a new highlighted box with a notification that the test_branch had recent pushes. There will be a green button to **`Compare & pull request`** :
 
 <p align="center">
-  <img src="img/9.GHD_pull_request_1.png" width="800">
+  <img src="img/pull-request-01.png" width="800">
 </p>
 
-If you click this button, it will pull up a summary of changes, with the option to **`Create Pull Request`**:
+If you click this button, it will pull up information about the changes in the branch, with the option to **`Create Pull Request`**:
 
 <p align="center">
-  <img src="img/9.GHD_preview_pull_request.png" width="800">
+  <img src="img/pull-request-02.png" width="800">
 </p>
 
-Clicking this will immediately open your repo on GitHub. Similar to when making a commit, you'll be prompted for a title and a description for your pull request. Go ahead and add a brief description and click the green **`Create pull request`** button
+Clicking this will create a pull request. Similar to when making a commit, you'll be prompted for a title and a description for your pull request. Go ahead and add a brief description and click the green **`Create pull request`** button.
 
 <p align="center">
-  <img src="img/9.GHD_create_pull_request_github.png" width="800">
+  <img src="img/pull-request-03.png" width="800">
 </p>
 
-> Note: you'll see a message up top here that says "Able to merge. These branches can be automatically merged." There may be cases where your branches conflict, just as commits can conflict, and they'll need to be manually reviewed.
+After a moment of processing, the page will show you a number of useful options, including the ability to **require review from specific users** (useful if you have multiple people working on a project that belongs primarily to one person who is the main editor) or to turn on debugging options through **continuous integration**. 
 
-After a moment of processing, the page will show you a number of useful options, including the ability to **require review from specific users** (useful if you have multiple people working on a project that belongs primarily to one person who is the main editor) or to turn on debugging options through **continuous integration**. Notice we have a nice green checkmark indicating that **This branch has no conflicts with the base branch** meaning we can merge these branches automatically without having to review any conflicting changes between `main` and `test_branch` manually.
+Notice we have a nice green checkmark indicating that **This branch has no conflicts with the base branch** meaning we can merge these branches automatically without having to review any conflicting changes between `main` and `test_branch` manually.
 
-<p align="center">
-  <img src="img/9.GHD_merge_pull_request_github.png" width="800">
-</p>
+Sometimes there may be cases where your branches conflict, just as commits can conflict, and they'll need to be manually reviewed.
 
 Under that is a big green button that says **`Merge pull request`**.
 
@@ -245,27 +243,35 @@ Go ahead and merge your branches using the default setting, clicking the green `
 Then, you'll be prompted to **`Confirm merge`**:
 
 <p align="center">
-  <img src="img/9.GHD_merge_pull_request_github_confirm.png" width="800">
+  <img src="img/pull-request-04.png" width="800">
 </p>
 
 You'll now see that the pull request has been completed on GitHub.
 
 <p align="center">
-  <img src="img/9.GHD_merge_pull_request_github_done.png" width="800">
+  <img src="img/pull-request-05.png" width="800">
 </p>
 
-Now we still have to sync our remote origin with our local repo. You'll see you now have a pull request:
-
+And the changes will be reflected in the main branch on GitHub
 
 <p align="center">
-  <img src="img/9.GHD_pull_origin_merge.png" width="800">
+  <img src="img/pull-request-06.png" width="800">
 </p>
 
-Go ahead and click `Pull origin` and then navigate to your `History` tab, and you'll see the commit from `test_branch` which updated the `README.md` file as well as the commit which merged the two branches:
+Now we still have to sync our remote origin with our local repo. You'll see you now have a pull request locally:
 
-<p align="center">
-  <img src="img/9.GHD_pull_origin_merge_history.png" width="800">
-</p>
+```{.bash}
+git pull
+```
+
+~~~{.output}
+Updating 9c3c3cd..565f6e5
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+```
+
 
 ## How to create a branch on GitHub
 
