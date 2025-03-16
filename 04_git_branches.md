@@ -105,37 +105,97 @@ Now we have deleted `test_branch`
 
 ## Making changes (commits) to your new branch
 
-Making a change to a branch is just like making a change to `main`. Let's give it a try. Navigate to the `Changes` tab on the left and then click the button to `Open the repository in your external editor`. Go to your `README.md` and add this line under the first header and save the readme file:
+Making a change to a branch is just like making a change to `main`. Let's give it a try. 
+
+Let's remake `test_branch`
+
+```{.bash}
+$ git checkout -b test_branch
+```
+
+
+Now add this line to the README file:
 
 ```
-This line of code was introduced in the lesson on branches!
+This line was made in the test branch!
 ```
 
-<p align="center">
-  <img src="img/9.GHD_change_readme.png" width="800">
-</p>
+Run `git status`:
 
-Just as before, you'll immediately see the change in the `Changes` tab. Go ahead and commit this change by clicking `Commit to test_branch`:
+```{.bash}
+$ git status
+```
 
-<p align="center">
-  <img src="../img/9.GHD_commit_branch.png" width="800">
-</p>
+~~~ {.output}
+On branch test_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	README.md
 
-And that's all there is to it! If you were to set your `Current Branch` to `main` and open your `README.md` file in your external text editor, that line of text we added would not be there, because the change we made is unique to `test_branch`. Go ahead and see for yourself!
+nothing added to commit but untracked files present (use "git add" to track)
+~~~
+
+Add and commit the changes to `test_branch`:
+
+```{.bash}
+$ git add README.md
+$ git commit -m "adding info to the README"
+```
+
+~~~{.output}
+[test_branch fc35fd5] adding info to the README
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+~~~
+
+And that's all there is to it! If you were to set your current branch to `main` and open `README.md` file, that line of text we added would not be there, because the change we made is unique to `test_branch`. Go ahead and see for yourself!
+
+```{.bash}
+$ git checkout main
+$ cat README.md
+```
 
 ### Publishing/pushing your branch to GitHub
 
-One last step: let's publish our new branch to GitHub. From the main `Changes` tab, click the **`Publish branch`** button to publish it to Remote. Be sure if your branch is `test_branch` and not `main` if you had switched it to the `main` branch inspect the `README.md`.
+One last step: let's publish our new branch to GitHub.  Be sure your branch is `test_branch` and not `main` if you had switched it to the `main` branch inspect the `README.md`.
 
-<p align="center">
-  <img src="../img/9.GHD_publish_branch.png" width="800">
-</p>
+```{.bash}
+$ git push
+```
 
-If you go to your repo on GitHub, you'll see that the branch has been published:
+~~~ {.output}
+fatal: The current branch test_branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
 
-<p align="center">
-  <img src="img/9.GHD_branch_on_GitHub.png" width="800">
-</p>
+    git push --set-upstream origin test_branch
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+~~~
+
+We have to set an upstream branch for `test_branch` because it doesn't exist on the remote yet.
+
+```{.bash}
+git push --set-upstream origin test_branch
+```
+
+~~~{.output}
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 396 bytes | 396.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'test_branch' on GitHub by visiting:
+remote:      https://github.com/sstein93/planets/pull/new/test_branch
+remote:
+To https://github.com/sstein93/planets.git
+ * [new branch]      test_branch -> test_branch
+branch 'test_branch' set up to track 'origin/test_branch'.
+~~~
+
+Now the remote is up-to-date with the local!
 
 **Note: If you already published your branch to GitHub and then make additional changes, you'll still have to Push your new changes to GitHub to sync your remote repository and create a pull request**
 
