@@ -13,10 +13,11 @@
 
 |  Lessons  | Estimated Duration  |
 |:------------------------:|:------------------------------------------------:|
-| [What is Version Control](https://hbctraining.github.io/Tools-for-reproducible-research/lessons/03_Intro_to_versioning.html) | 15 min |
-| [Using Git/GitHub Desktop for version control locally](https://hbctraining.github.io/Tools-for-reproducible-research/lessons/04_GitHub_desktop.html) | 50 min|
-| [Using GitHub for version control "remotely"](https://hbctraining.github.io/Tools-for-reproducible-research/lessons/05_GitHub_Dekstop_remote1.html) | 50 min |
-| Q&A | 30 min |
+| [What is Version Control](https://github.com/sstein93/git-github-workshop/blob/main/01_Intro_to_versioning.md) | 15 min |
+| [Git basics](https://github.com/sstein93/git-github-workshop/blob/main/02_git_basics.md) | 30 min|
+| [Using GitHub for version control "remotely"](https://github.com/sstein93/git-github-workshop/blob/main/03_git_github.md) | 30 min |
+| [Git branches](https://github.com/sstein93/git-github-workshop/blob/main/04_git_branches.md) | 30 min |
+| [Working collaboratively](https://github.com/sstein93/git-github-workshop/blob/main/05_github_collaboration.md) | 30 min |
 
 
 ### Installation Requirements
