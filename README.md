@@ -9,8 +9,6 @@
 
 ## Contents
 
-### "Track Changes" with your code: An Introduction to Git and GitHub (Part 1)
-
 |  Lessons  | Estimated Duration  |
 |:------------------------:|:------------------------------------------------:|
 | [What is Version Control](https://github.com/sstein93/git-github-workshop/blob/main/01_Intro_to_versioning.md) | 15 min |
